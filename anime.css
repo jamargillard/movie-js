@@ -167,6 +167,8 @@ nav {
     border-radius: 50px;
     color: white;
     transition: all 300ms ease;
+
+
   }
   
   .nav__link--anchor-primary:hover {
@@ -174,8 +176,7 @@ nav {
   }
   
   .nav__link--anchor:hover {
-    background-color: #e5aee1;
-    
+    color: #bd72b8;
   }
 
   .nav__logo {
@@ -228,7 +229,140 @@ nav {
 
 
 
-/* 
+
+  /*
+   FINDER
+   */
+
+   .main__header{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 900;
+    color: #bd72b8;
+    animation: fade-up 1300ms;
+
+   }
+
+   .main__subheader{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 500;
+    color: #242424;
+
+   }
+
+   .highlight{
+    color: #bd72b8;
+    animation: fade-in 4500ms;
+   }
+
+   .finder__input{
+    background-color: #fff;
+    border-radius: 20px;
+    color: #0a1f44;
+    display: inline-block;
+    height: 70px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+    font-size: 24px;
+    padding-left: 25px;
+
+}
+.finder__input--holder{
+    justify-content: center;
+
+}
+   .finder__search
+   {
+    width: 95px;
+    height: 95px;
+background-color: #e5aee1;
+    margin-left: 20px;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 75%;
+    display: inline-block;
+    margin-top: 20px;
+ position: absolute;
+ right: 70px;
+ animation: float 1500ms infinite ease-in-out ;
+ transition:all .3s ease;
+ border: 2.5px dashed #0a1f44;
+
+   }
+
+   .finder__search:hover{
+    background-color: antiquewhite;
+    
+   }
+
+/* quote display */
+
+.random__quote{
+    background-color: #bd72b8;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: all 400ms ease;
+    border: 2.5px dashed #0a1f44;
+    animation: random_color 3000ms infinite ease-in-out ;
+
+  }
+  
+  .random__quote:hover {
+    background-color: antiquewhite;
+    color: #242424;
+  }
+
+
+
+
+
+
+   /* chibis */
+
+   .chibi__container{
+
+    justify-content: space-evenly;
+    padding: 10px;
+    padding-top: 10px;
+    
+   }
+
+   .chibi__inner{
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+
+   }
+   .goku__pic{
+    height: 14.5rem ;
+    width: 11rem;
+    animation: chibi__float 3000ms infinite ease-in-out ;
+}
+
+   .naruto__pic{
+    height: 14.5rem ;
+    width: 9.5rem;
+    animation: chibi__float  2550ms infinite ease-in-out ;
+
+   }
+
+   .luffy__pic{
+    height: 14rem;
+    width: 8rem;
+    animation: chibi__float 3150ms infinite ease-in-out ;
+
+   }
+
+
+   /* 
 animatoins
 
  */
@@ -298,106 +432,23 @@ animatoins
         transform: translateY(0px);
     }
   }
-  /*
-   FINDER
-   */
 
-   .main__header{
-    font-size: 35px;
-    text-align: center;
-    font-weight: 900;
-    color: #bd72b8;
-    animation: fade-up 1300ms;
+  
+  @keyframes random_color{
 
-   }
-
-   .main__subheader{
-    font-size: 35px;
-    text-align: center;
-    font-weight: 500;
-    color: #242424;
-
-   }
-
-   .highlight{
-    color: #bd72b8;
-    animation: fade-in 4500ms;
-   }
-
-   .finder__input{
-    background-color: #fff;
-    border-radius: 20px;
-    border: 1px solid #0a1f44;
-    color: #0a1f44;
-    display: inline-block;
-    height: 70px;
-    line-height: 40px;
-    outline: none;
-    padding: 0 15px;
-    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-    width: 100%;
-    font-size: 24px;
-    padding-left: 25px;
-
-}
-.finder__input--holder{
-    justify-content: center;
-
-}
-   .finder__search
-   {
-    width: 95px;
-    height: 95px;
-background-color: #e5aee1;
-    margin-left: 20px;
-    font-size: 30px;
-    color: #fff;
-    border-radius: 75%;
-    display: inline-block;
-    margin-top: 20px;
- position: absolute;
- right: 70px;
- animation: float 1500ms infinite ease-in-out ;
- transition:all .3s ease;
-   }
-
-   .finder__search:hover{
-    background-color: antiquewhite;
-    
-   }
-
-
-
-   /* chibis */
-
-   .chibi__container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 10px;
-    padding-top: 10px;
-    
-   }
-
-   .chibi__inner{
-    width: 33%;
-   }
-   .goku__pic{
-    height: 14.5rem ;
-    width: 11rem;
-    animation: chibi__float 3000ms infinite ease-in-out ;
-}
-
-   .naruto__pic{
-    height: 14.5rem ;
-    width: 9.5rem;
-    animation: chibi__float  2550ms infinite ease-in-out ;
-
-   }
-
-   .luffy__pic{
-    height: 14rem;
-    width: 8rem;
-    animation: chibi__float 3150ms infinite ease-in-out ;
-
-   }
+        30% {     
+          color: rgb(247, 115, 137);   
+        }   
+        45% {     
+          color: rgb(239, 239, 108);   
+        } 
+        65% {     
+            color: rgb(92, 170, 123);   
+          } 
+        85% {
+          color: rgb(76, 76, 255);
+         }
+           100%{
+            color: white;   
+           }
+  }
