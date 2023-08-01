@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime API</title>
+    <title>Movie API Proj</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="anime.css">
     
@@ -11,7 +11,7 @@
 <nav>
     <div class="row navbar__logo">
     <figure class="logo__picture--mask nav__logo">
-     <img src="./assets/Capture.PNG" class="logo__picture">
+     <img src="./assets/movlogo.PNG" class="logo__picture">
     </figure>
     
 </div>
@@ -19,7 +19,7 @@
 <div class="container__nav ">
     <ul class="nav__link--list">
         <li class="nav__li" ><a href="#home" class=" nav__link--anchor click">Home</a></li>
-        <Li class="nav__li" ><a href="#finder" class=" nav__link--anchor-primary click">Anime</a></Li>
+        <Li class="nav__li" ><a href="#finder" class=" nav__link--anchor-primary click">Movies</a></Li>
     </ul>
 </div>
 </div>
@@ -29,11 +29,11 @@
     <div class="container">
         <div class="finder__container">
             <div class="main__header--container">
-                <h1 class="main__header">The Anime Quote Finder Platform</h1>
-                <h2 class="main__subheader">Find Your Quote With <span class="highlight">AniFinder</span></h2>
+                <h1 class="main__header">The Movie Finder Platform</h1>
+                <h2 class="main__subheader">Find Your Flick With <span class="highlight">FLikFinder</span></h2>
             </div>
             <div class="finder__input--holder">
-                <input type="text" placeholder="Search by name, year, or genre" class="finder__input">
+                <input type="text" placeholder="Search by title, year, or genre" class="finder__input" onchange="onSearchChange(event)" id="searchbox">
             <button class="finder__search">🔍</button>
             </div>
     </div>
@@ -42,10 +42,7 @@
 </section>
 
 <section>
-    <div class="container">
-        <button class="random__quote"onclick="randomQuote(event)"> Random </button>
 
-</div>
     <div class="container">
         <div class="row">
           <div class="user-list">
@@ -53,9 +50,9 @@
               <div class="user-card">
                 <div class="user-card__container">
                   <h3>User's Name</h4>
-                    <p><b>Anime:</b> anime</p>
-                    <p><b>Character:</b> character</p>
-                    <p><b>quote:</b> quote</p>
+                    <p><b>Title:</b> Title</p>
+                    <p><b>Rating:</b> rating</p>
+                    <p><b>year:</b> ear</p>
                 </div>
               </div>
             </div>
@@ -67,13 +64,13 @@
 <div class="chibi__container ">
     <div class="chibi__inner">
     <div class="goku">
-        <img src="assets/goku.png" alt="" class="goku__pic">
+        <img src="assets/barbie.png" alt="" class="goku__pic">
     </div>
     <div class="naruto">
-        <img src="assets/naruto.png" alt="" class="naruto__pic">
+        <img src="assets/oppenheimer.jpeg" alt="" class="naruto__pic">
     </div>
     <div class="luffy">
-        <img src="assets/luffy.png" alt=""class="luffy__pic">
+        <img src="assets/miles.jpg" alt=""class="luffy__pic">
     </div>
 </div>
 </div>
