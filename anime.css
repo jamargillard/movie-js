@@ -302,24 +302,13 @@ background-color: #e5aee1;
 
 /* quote display */
 
-.random__quote{
-    background-color: #bd72b8;
-    font-weight: 500;
-    font-size: 24px;
-    padding: 8px 20px;
-    border-radius: 50px;
-    color: white;
-    transition: all 400ms ease;
-    border: 2.5px dashed #0a1f44;
-    animation: random_color 3000ms infinite ease-in-out ;
-
-  }
-  
-  .random__quote:hover {
-    background-color: antiquewhite;
+.movie__heading{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 900;
     color: #242424;
-  }
-
+    padding-bottom: 28px;
+}
 
 
 
@@ -332,26 +321,33 @@ background-color: #e5aee1;
     justify-content: space-evenly;
     padding: 10px;
     padding-top: 10px;
-    
+    max-width: 100%;
+    display: flex;
+
+
    }
 
    .chibi__inner{
-    width: 100%;
+    width: 50%;
     justify-content: space-evenly;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
 
    }
    .goku__pic{
     height: 16rem ;
     width: 11.5rem;
     animation: chibi__float 3000ms infinite ease-in-out ;
+    margin:  15px 10px ;
 }
 
    .naruto__pic{
     height: 16rem ;
     width: 11rem;
     animation: chibi__float  2550ms infinite ease-in-out ;
+    margin:  15px 10px ;
 
    }
 
@@ -359,14 +355,53 @@ background-color: #e5aee1;
     height: 16rem;
     width: 11rem;
     animation: chibi__float 3150ms infinite ease-in-out ;
+    margin:  15px 10px ;
+    right: 10px;
 
    }
 
+   .gotg__pic{
+    height: 16rem ;
+    width: 11.5rem;
+    animation: chibi__float  2550ms infinite ease-in-out ;
+    margin:  15px 10px ;
 
-   /* 
-animatoins
+}
 
- */
+   .fast__pic{
+    height: 16rem ;
+    width: 11rem;
+    animation: chibi__float 4000ms infinite ease-in-out ;
+    margin:  15px 10px ;
+
+   }
+
+   .transformers__pic{
+    height: 16rem;
+    width: 11rem;
+    animation: chibi__float 3000ms infinite ease-in-out ;
+    margin:  15px 10px ;
+   }
+
+   .post{
+    border: 4px solid #242424;
+    background-color: #dacbd9;
+    margin: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin: 8px;
+    font-size: 14px;
+
+   }
+    .post__title{
+        font-size: 13px;
+        padding: 0 5px;
+    }
+   
+    
+/* animatoins */
+
+
 
 
 
