@@ -316,7 +316,7 @@ background-color: #e5aee1;
 
    /* chibis */
 
-   .chibi__container{
+   .mov__container{
 
     justify-content: space-evenly;
     padding: 10px;
@@ -327,7 +327,7 @@ background-color: #e5aee1;
 
    }
 
-   .chibi__inner{
+   .mov__inner{
     width: 50%;
     justify-content: space-evenly;
     display: flex;
@@ -336,14 +336,17 @@ background-color: #e5aee1;
 
 
    }
-   .goku__pic{
+   .mov__pic--holder{
+    padding: 2px;
+   }
+   .mov__pic{
     height: 16rem ;
     width: 11.5rem;
     animation: chibi__float 3000ms infinite ease-in-out ;
     margin:  15px 10px ;
 }
 
-   .naruto__pic{
+   .mov__pic2{
     height: 16rem ;
     width: 11rem;
     animation: chibi__float  2550ms infinite ease-in-out ;
@@ -356,7 +359,6 @@ background-color: #e5aee1;
     width: 11rem;
     animation: chibi__float 3150ms infinite ease-in-out ;
     margin:  15px 10px ;
-    right: 10px;
 
    }
 
@@ -488,3 +490,34 @@ background-color: #e5aee1;
             color: white;   
            }
   }
+
+  @keyframes spinner{
+    0% {
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+  
+ .modal__overlay--loading {
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+color: #242424;    
+ }
+  .invis {
+    opacity: 0; 
+  }
+
+  .fa-spinner{
+    animation: spinner 750ms infinite linear;}
+    
+    .modal__overlay--visible {
+        z-index: 1;
+        display: flex;
+      }

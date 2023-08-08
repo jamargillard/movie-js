@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie API Proj</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="anime.css">
-    
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
 <nav>
     <div class="row navbar__logo">
@@ -24,7 +24,7 @@
 </div>
 </div>
 </nav>
-
+<body>
 <section id="finder">
     <div class="container">
         <div class="finder__container">
@@ -33,20 +33,28 @@
                 <h2 class="main__subheader">Find Your Flick With <span class="highlight">FLikFinder</span></h2>
             </div>
             <div class="finder__input--holder">
-                <input type="text" placeholder="Search by name" class="finder__input" onchange="onSearchChange(event)" id="searchbox">
-            <button class="finder__search">🔍</button>
+                <input type="text" placeholder="Search by name" class="finder__input"  id="searchbox" >
+            <button class="finder__search" id="searchBtn" onclick="searchMovie()" >🔍
+             
+            </button>
             </div>
     </div>
+    
 </div>
-
+<div class="modal__overlay
+modal__overlay--loading
+invis"
+id="modal">
+    <i class="fas fa-spinner"></i>
+</div>
+</div>
 </section>
 
 
 <section id="chibis">
 
 </section>
-<body>
-</body>
 
 <script src="script.js"></script>
+</body>
 </html>
