@@ -18,7 +18,7 @@
 <div class="navbar__links--container">
 <div class="container__nav ">
     <ul class="nav__link--list">
-        <li class="nav__li" ><a href="#home" class=" nav__link--anchor click">Home</a></li>
+        <li class="nav__li" ><a onClick="window.location.reload();" class=" nav__link--anchor click">Home</a></li>
         <Li class="nav__li" ><a href="#finder" class=" nav__link--anchor-primary click">Movies</a></Li>
     </ul>
 </div>
@@ -33,8 +33,8 @@
                 <h2 class="main__subheader">Find Your Flick With <span class="highlight">FLikFinder</span></h2>
             </div>
             <div class="finder__input--holder">
-                <input type="text" placeholder="Search by name" class="finder__input"  id="searchbox" >
-            <button class="finder__search" id="searchBtn" onchange="onSearchChange(event)" >🔍
+                <input type="text" placeholder="Search by name" class="finder__input"  id="searchbox"  onchange="searchInput(event)" onkeydown="return (event.keyCode!=13)">
+            <button class="finder__search" id="searchBtn" onclick="showMovies()" >🔍
              
             </button>
             </div>
@@ -46,73 +46,24 @@
 
 
 <section id="movies">
+    <div class="row">
+        <div class="container">
+
     <div class="loading">
         <i class="fas fa-spinner movies__loading--spinner"></i>
-    </div>
-    <div class="movie__results">
- 
-    <div class="container">
-        <div class="row">
-            <div class="results__wrapper">
-                <h1 class="title" id="title_movie">
-                    Trending <span class="highlight__no--fade">Now:</span>
-                </h1>
-            </div>
-        </div>
+    </div class="here">
+
     
  <div class="movie__container">
-    <div class="movie trending">
-        <figure class="movie__cover--wrapper">
-            <img class="movie__cover " src="assets/miles.jpg" alt="">
-        </figure>
-        <h2 class="movie__title">Spider-Man: Across The Spider-Verse</h2>
-        <p class="movie__year">  June 03 2023 </p>
-    </div>
+    <div class="movie">
+        
+         </div>
 
-    <div class="movie trending">
-            <figure class="movie__cover--wrapper">
-                <img class="movie__cover " src="assets/barb.jpg" alt="">
-            </figure>
-            <h2 class="movie__title">Barbie</h2>
-            <p class="movie__year">  July 21 2023 </p>
-        </div>
-
-        <div class="movie trending">
-            <figure class="movie__cover--wrapper">
-                <img class="movie__cover" src="assets/oppenheimer.jpeg" alt="">
-            </figure>
-            <h2 class="movie__title">Oppenheimer</h2>
-            <p class="movie__year">  July 21 2023 </p>
-        </div>
-        <div class="movie trending">
-            <figure class="movie__cover--wrapper">
-                <img class="movie__cover" src="assets/transformers.jpg" alt="">
-            </figure>
-            <h2 class="movie__title">Transformers: Rise Of The Beast</h2>
-            <p class="movie__year">  July 21 2023 </p>
-        </div>
-        <div class="movie trending">
-            <figure class="movie__cover--wrapper">
-                <img class="movie__cover" src="assets/gotg.jpg" alt="">
-            </figure>
-            <h2 class="movie__title">Gaurdians Of The Galaxy Vol 3</h2>
-            <p class="movie__year">  July 21 2023 </p>
-        </div>
-        <div class="movie trending">
-            <figure class="movie__cover--wrapper">
-                <img class="movie__cover" src="assets/fast.jpg" alt="">
-            </figure>
-            <h2 class="movie__title">Fast X</h2>
-            <p class="movie__year">  July 21 2023 </p>
-        </div>
-        </div>
 
     </div>
-
-
- 
 
 </div>
+
 </section>
 
 <script src="script.js"></script>

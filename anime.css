@@ -327,34 +327,43 @@ background-color: #e5aee1;
 
    
     .movie {
-        width: 33%;
-        padding: 24px;
+         padding: 24px;
+        margin: 10px 24PX;
+        margin-bottom: 10px;
+        position: relative;
         flex-direction: row;
-        margin: 4PX;
-   
+        flex-wrap: wrap;
+        max-width: 100%;
+        justify-content: space-evenly;
+ 
+      
     }
-    
+     
 
     .movie__container{
-        justify-content: space-evenly;
         display: flex;
-        flex-wrap: wrap;
-        /* flex-direction: row; */
-    }
+      position:relative;
+      padding: 10px 10px;
+      justify-content: center;
+      align-items: center;
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+      }
 
 
     .movie__cover--wrapper {
-        margin: 20px;
-        border-radius: 4px;
+        margin: 16px;
+        border-radius: 8px;
         overflow: hidden;
         display: flex;
         transition: all 300ms ease;
-        height: 18rem;
-        width: 13rem;
+        height: 14rem;
     }
 
     .movie__cover{
-        margin: 10px;
+        margin: 8px;
+        width: 100%;
     }
     
     .movie__cover--wrapper:hover {
@@ -362,24 +371,33 @@ background-color: #e5aee1;
         transform: scale(1.02);
     }
     
+    /* .movie__description{
+
+    } */
     .movie__title {
         font-size: 20px;
         color: #242424;
         text-align: center;
         margin-bottom: 8px;
+        word-wrap: break-word;
+        overflow: visible;
+       width: 183px;
+
+
     }
     
     .movie__year {
-        font-size: 14px;
         font-weight: 500;
         text-align: center;
         color: #242424;
     }
     
-    .movie__results {
-        padding-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
+    .movie__description {
+        display: block;
+        align-items: center;
+        text-align:center;
+        overflow-wrap: break-word;
+
     }
 
       /* loading  */
@@ -390,11 +408,13 @@ background-color: #e5aee1;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 80px;
+        font-size: 250px;
         position: absolute;
         color: #bd72b8;
         left: 0;
         right: 0;
+        z-index: 50;
+        opacity: 50%;
     }
     
     .movies__loading--spinner {
@@ -485,6 +505,40 @@ background-color: #e5aee1;
 
 
       /* small and large phones add to later, hamburg menu and shrinnk logo */
+  
+  
+      /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+
+
+@media (max-width: 768px) {
+  .movie {
+      width: calc(100% / 2);
+  }
+  .logo__picture--mask{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    left: 85px;
+  }
+nav{
+  align-items: center;
+  justify-content: space-evenly;
+}
+  .navbar__links--container{
+    display: none;
+   
+  }
+
+  li{
+    font-size: 10px;
+    float: right;
+  }
+}
+      
+
+
+
       @media (max-width: 550px) {
         .nav__container{
             padding: 0 8px;
@@ -501,11 +555,20 @@ background-color: #e5aee1;
             max-width: 360px;
         }
     
-        .movie{
-            width: 50%;
-        }
     
-        .results__wrapper {
+    
+        .idults__wrapper {
             flex-direction: column;
         }
+        .movie__container{
+          justify-content: center;
+          align-items: center;
+        }
+        .logo__picture--mask{
+          justify-content: center;
+          align-items: center;
+        }
     }
+
+
+      
