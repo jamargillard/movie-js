@@ -6,7 +6,9 @@
 const apikey = '442a3887&s';
 const apiurl = 'https://www.omdbapi.com/?apikey=';
 
+
 const urlWithKey = apiurl + apikey;
+
 
 let searchInput = document.getElementById('searchbox');
 let word = searchInput.value.trim();
@@ -14,49 +16,69 @@ const searchBtn = document.getElementById('searchButton');
 // let savedSearchInput = '';
 const movieId = '';
 const loadingSpinEl = document.querySelector(' .loading')
-const searchTitleEl = document.querySelector(" .title")
+const searchTitleEl = document.querySelector(" #title__movie")
 const movieResultsEl = document.querySelector(" .movie__results")
 
 
 
 
-
-
-
-// loading state
+// loading state after render movies func
 async function renderMovies(word){
     setTimeout(() => {        
         loadingSpinEl.classList += ' movies__loading';
         }, 300)
 
 
+
+
 movieResultsEl.style.visibility='hidden';
+
+
 const movieTitles= await fetch (`https://www.omdbapi.com/?apikey=442a3887&s=${word}`);
 const movieTitlesData = await movieTitles.json();
-console.log(movieTitlesData)
-let movieTitlesArray = await movieTitlesData.search
+const movieTitlesArray = await movieTitlesData
+console.log(movieTitlesArray)
 
 
 setTimeout(() => {
-    movieResultsEl.style.visibility='visible';
-    loadingSpinEl.classList.remove('movies__loading');
+    movieResultsEl.style.visibility='hidden';
 // add {i} maybe
-    movieResultsEl.innerHTML = movieTitlesArray.map((movie) => movieHTML(movie)).join("");
-    searchTitleEl.innerHTML = `Results for: ${word}`;
+
+
+movieResultsEl.innerHTML += movieHTML(movieTitlesArray)
+
+    // movieResultsEl.innerHTML = movieTitlesArray.map((movie) => movieHTML(movie)).join("");
+    // searchTitleEl.innerHTML = `Results for: ${word}` ;
+
+
+
+
+
+   
+
+
+
+    loadingSpinEl.classList.remove('movies__loading');
+
 
 }, 600);
 
 
 
 
-    
+
+
+
+
+   
+
 
     function onSearchChange(event){
         word = event.target.value;
         event.preventDefault();
         renderMovies();
     }
-    
+   
     function movieHTML(movie) {
         return `<div class="movie">
             <figure class="movie__cover--wrapper">
@@ -64,27 +86,141 @@ setTimeout(() => {
             </figure>
             <h2 class="movie__title">${movie.Title}</h2>
             <p class="movie__year">${movie.Year}</p>
+        </div>
         </div>`;
+        
     }
 
+function titleHTML(word){
+  return  `Results for: ${word}`
+}
 //   search button (problem with undefined passing in renderMov dont worry for now)
+
 
     const search = document.getElementById("searchBtn");
     search.addEventListener("click", function () {
     renderMovies(word);
     });
 
+
 }
+
+
 
 
     // hamburg
     // function openMenu() {
     //     document.body.classList += " menu--open"
     // }
-    
+   
     // function closeMenu() {
     //     document.body.classList.remove('menu--open')
     // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -194,8 +330,12 @@ setTimeout(() => {
 
 
 
+
+
+
 // //       // // main things
 // // awaits the get movie function
+
 
 // document.addEventListener('DOMContentLoaded', async () => {
 //         const trendingMovieData = await Promise.all(trendingMovies.map(async movieIds => {
@@ -203,22 +343,27 @@ setTimeout(() => {
 //             return movieData;
 //         }));
 //         showMovieData(trendingMovieData);
-        
+       
 //     })
 // // // function to get movie id , defined  with dataFromFetch
 
+
 // async function getMovieId(movieId){
-    
+   
 //    const fetchResponse = await fetch(`${urlWithKey}&i=${movieId}&plot=short`);
 // const dataFromFetch = await fetchResponse.json();
 // return dataFromFetch;
 
+
 // }
+
 
 // // // search api for query, map over it (stack overflow encode), using data from fetch
 
+
 // //first part
 // const searchInputVal = searchInput.value.trim();
+
 
 // async function searchApiForInputVal(searchInputVal){
 //     const fetchResponse = await fetch(`${urlWithKey}&s=${encodeURIComponent(searchInputVal)}`)
@@ -226,12 +371,17 @@ setTimeout(() => {
 // console.log('API Response:', dataFromFetch);
 
 
+
+
 // // store results
 // const searchResults = dataFromFetch.Search || [];
 // console.log('Search Results:', searchResults);
 
+
 // const movieIds =  searchResults.map(movie => movie.imdbID);
 // console.log('Movie IDs:', movieIds);
+
+
 
 
 // const specificMovieData = await Promise.all(
@@ -242,20 +392,25 @@ setTimeout(() => {
 //     })
 // );
 
+
 // console.log('Specific Movie Data:', specificMovieData);
 // return specificMovieData.slice(0, 6);
+
 
 // }
 
 
+
+
 // function showMovieData(movieData){
+
 
 //     if (movieData.length === 0) {
 //         searchResults.innerHTML = 'No movies found.';
 //       } else {
 //         searchResults.innerHTML = `
 //         <h1 class="movie__heading"> results for ${search}</h1>
-        
+       
 //         <div class="mov__container ">
 //          <div class="mov__inner">
 //         ${movieData
@@ -263,7 +418,7 @@ setTimeout(() => {
 //         movie => `
 //          <div class="mov__pic--holder">
 //          <div class= 'mov__pic'>
-//          <img src="${movie.Poster}"  class="mov__pic" > 
+//          <img src="${movie.Poster}"  class="mov__pic" >
 //          </div>
 //          <div class="post-list">
 //                  <div class="post">
@@ -279,11 +434,11 @@ setTimeout(() => {
 //                  </div>
 //                </div>
 //          </div>
-        
-        
+       
+       
 //          <div class="mov__pic--holder">
 //          <div class= 'mov__pic2'>
-//          <img src="${movie.Poster}"  class="mov__pic"> 
+//          <img src="${movie.Poster}"  class="mov__pic">
 //          </div>
 //          <div class="post-list">
 //                  <div class="post">
@@ -300,10 +455,12 @@ setTimeout(() => {
 //                </div>
 //          </div>
 
+
 //                `
 //         )
 //              .join('')}
 //              </div>` ;
+
 
 //              const movieOptions = searchResults.querySelectorAll('.chibi__inner');
 //              movieOptions.forEach((option, index) => {
@@ -312,8 +469,25 @@ setTimeout(() => {
 //       });
 //     });
 //   }
-  
+ 
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -332,9 +506,27 @@ setTimeout(() => {
 
 
    
-        
-// //         
+       
+// //        
 // //  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
